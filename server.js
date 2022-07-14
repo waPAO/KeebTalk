@@ -3,6 +3,7 @@ const path = require('path');
 const http = require('http');
 const socketio = require('socket.io');
 const formatMessage = require('./utils/messages');
+const { userJoin, getCurrentUser, userLeave, getRoomUsers } = require('./utils/users');
 
 const app = express();
 const server = http.createServer(app);
@@ -10,21 +11,42 @@ const io = socketio(server);
 
 app.use(express.static(path.join(__dirname, 'static')));
 
-const botName = 'Chatta bot';
+const botName = 'Chatta-Bot';
 
 io.on('connection', socket => {
-     // User joins
-    socket.emit('message', formatMessage(botName, 'Welcome to ChatCord'));
-    socket.broadcast.emit('message', formatMessage(botName, 'A user has joined the chat'));
-    // User leaves
-    socket.on('disconnect', () => {
-        io.emit('message', formatMessage(botName, 'A user has left the chat'));
-    });
-    // Get chatMessage
-    socket.on('chatMessage', msg=> {
-        io.emit('message', formatMessage('USER', msg));
+    socket.on('joinRoom', ({ username, room }) => {
+        const user = userJoin(socket.id, username, room);
+        socket.join(user.room);
+        // User joins
+        socket.emit('message', formatMessage(botName, 'Welcome to ChatCord'));
+        socket.broadcast.to(user.room).emit('message', formatMessage(botName, `${user.username} has joined the chat!`));
+
+        //Send info
+        io.to(user.room).emit('roomUsers', {
+            room: user.room,
+            users: getRoomUsers(user.room)
+        });
     });
 
+    // Get chatMessage
+    socket.on('chatMessage', msg=> {
+        const user = getCurrentUser(socket.id);
+        io.to(user.room).emit('message', formatMessage(user.username, msg));
+    });
+
+    // User leaves
+    socket.on('disconnect', () => {
+        const user = userLeave(socket.id);
+
+        if(user) {
+            io.to(user.room).emit('message', formatMessage(botName, `${user.username} has left the chat`));
+            //Send info
+            io.to(user.room).emit('roomUsers', {
+                room: user.room,
+                users: getRoomUsers(user.room)
+            });
+        }
+    });
 });
 
 const PORT = 3000 || process.env.PORT;
