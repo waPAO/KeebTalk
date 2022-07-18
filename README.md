@@ -1,4 +1,4 @@
-# KeebTalk
+# :keyboard: KeebTalk :keyboard:
 KeebTalk is a a very simple text-chat application that was inspired by my never ending use of Discord and Reddit mechanical keyboard servers. This is my first step into socket apps and I wanted to mimic some of the key components of Discord and tie it together into an all in one space for keyboard communities to chat.
 
 ## What is KeebTalk?
