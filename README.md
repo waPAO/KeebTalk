@@ -5,7 +5,7 @@ KeebTalk is a a very simple text-chat application that was inspired by my never 
 KeebTalk allows users to connect and chat in a virtual room. Users simply enter a username of their choice, pick a channel of their interest, and begin chatting. Users will only be able to chat to the members who are currently in their specified channel. A panel on the left lets the user now what room they are in and which other users are in the room with them. Users are free to leave and change rooms whenvever they would like, they simply just have to press the 'Exit Channel' option located on the top right and choose a new room. Users in the room will be NOTIFIED of new users in the chat and users who leave as well.
 
 ## How to KeebTalk
-In order to use KeebTalk, you can simply clone this repository and from there follow these steps:
+In order to use KeebTalk, you can simply clone this repository and from there follow these steps or just simply follow the link [HERE](https://keebtalk.herokuapp.com/):
 
 * open the directory in a code editor
 * cd into the repository
