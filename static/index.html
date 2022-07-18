@@ -6,18 +6,20 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<script src="https://kit.fontawesome.com/36df0b0d63.js" crossorigin="anonymous"></script>
+		<!-- CSS only -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 		<link rel="stylesheet" href="css/styles.css" />
 		<title>Chatta</title>
 	</head>
 	<body>
 		<div class="join-container">
 			<header class="join-header">
-				<h1><i class="fa-solid fa-message"></i></i> Chatta!</h1>
+				<h1><i class="fa-solid fa-keyboard"></i></i> KeebTalk</h1>
 			</header>
 			<main class="join-main">
 				<form action="chat.html">
 					<div class="form-control">
-						<label for="username">Username</label>
+						<label for="username">Keeb-Name</label>
 						<input
 							type="text"
 							name="username"
@@ -27,13 +29,15 @@
 						/>
 					</div>
 					<div class="form-control">
-						<label for="room">Room</label>
+						<label for="room">Channel</label>
 						<select name="room" id="room">
-							<option value="Coding">Coding</option>
-							<option value="School">School</option>
-							<option value="Gaming">Gaming</option>
-							<option value="VALORANT">VALORANT</option>
-							<option value="Music">Music</option>
+							<option value="Keyboards">Keyboards (Selling/Trades)</option>
+							<option value="Keyboard Parts">Keyboard Parts</option>
+							<option value="Building Keyboards">Building Keyboards</option>
+							<option value="Keyboard Updates">Keyboard Updates</option>
+							<option value="Soldering">Sodering</option>
+							<option value="QMK/VIA">QMK/VIA Help</option>
+							<option value="Questions/Help">Questions/Help</option>
 							<option value="Random">Random</option>
 						</select>
 					</div>

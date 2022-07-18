@@ -4,20 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://kit.fontawesome.com/36df0b0d63.js" crossorigin="anonymous"></script>
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   <link rel="stylesheet" href="css/styles.css">
   <title>Chatta</title>
 </head>
 <body>
   <div class="chat-container">
     <header class="chat-header">
-      <h1><i class="fa-solid fa-message"></i> Chatta!</h1>
-      <a href="index.html" class="btn">Leave Room</a>
+      <h1><i class="fa-solid fa-keyboard"></i> KeebTalk</h1>
+      <a href="index.html" class="btn">Exit Channel</a>
     </header>
     <main class="chat-main">
       <div class="chat-sidebar">
-        <h3><i class="fa-solid fa-door-open"></i> Room:</h3>
+        <h3><i class="fa-solid fa-tv"></i> Channel:</h3>
         <h2 id="room-name"></h2>
-        <h3><i class="fa-solid fa-people-group"></i> Users</h3>
+        <h3><i class="fa-solid fa-people-arrows-left-right"></i></i> Keebies</h3>
         <ul id="users"></ul>
       </div>
       <div class="chat-messages"></div>
@@ -31,7 +33,7 @@
           required
           autocomplete="off"
         />
-        <button class="btn"><i class="fa-solid fa-plane-departure"></i> Send</button>
+        <button class="btn"><i class="fa-solid fa-arrow-right-to-bracket"></i> Send</button>
       </form>
     </div>
   </div>
